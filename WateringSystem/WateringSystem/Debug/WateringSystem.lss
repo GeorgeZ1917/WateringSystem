@@ -1,0 +1,1297 @@
+
+WateringSystem.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000096  00800100  000007b2  00000846  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000007b2  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000007  00800196  00800196  000008dc  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000008dc  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000090c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000100  00000000  00000000  0000094c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001944  00000000  00000000  00000a4c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000a8f  00000000  00000000  00002390  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000b15  00000000  00000000  00002e1f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000002b0  00000000  00000000  00003934  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000008ea  00000000  00000000  00003be4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000b3e  00000000  00000000  000044ce  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000e0  00000000  00000000  0000500c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__ctors_end>
+   4:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+   8:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+   c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  10:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  14:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  18:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  1c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  20:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  24:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  28:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  2c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  30:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  34:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  38:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  3c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  40:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  44:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  48:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  4c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  50:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  54:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  58:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  5c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  60:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  64:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+  68:	dc 01       	movw	r26, r24
+  6a:	da 01       	movw	r26, r20
+  6c:	da 01       	movw	r26, r20
+  6e:	da 01       	movw	r26, r20
+  70:	da 01       	movw	r26, r20
+  72:	da 01       	movw	r26, r20
+  74:	da 01       	movw	r26, r20
+  76:	da 01       	movw	r26, r20
+  78:	da 01       	movw	r26, r20
+  7a:	da 01       	movw	r26, r20
+  7c:	da 01       	movw	r26, r20
+  7e:	da 01       	movw	r26, r20
+  80:	da 01       	movw	r26, r20
+  82:	da 01       	movw	r26, r20
+  84:	da 01       	movw	r26, r20
+  86:	da 01       	movw	r26, r20
+  88:	da 01       	movw	r26, r20
+  8a:	da 01       	movw	r26, r20
+  8c:	da 01       	movw	r26, r20
+  8e:	da 01       	movw	r26, r20
+  90:	da 01       	movw	r26, r20
+  92:	da 01       	movw	r26, r20
+  94:	da 01       	movw	r26, r20
+  96:	da 01       	movw	r26, r20
+  98:	d8 01       	movw	r26, r16
+  9a:	da 01       	movw	r26, r20
+  9c:	da 01       	movw	r26, r20
+  9e:	da 01       	movw	r26, r20
+  a0:	da 01       	movw	r26, r20
+  a2:	da 01       	movw	r26, r20
+  a4:	da 01       	movw	r26, r20
+  a6:	da 01       	movw	r26, r20
+  a8:	dc 01       	movw	r26, r24
+  aa:	da 01       	movw	r26, r20
+  ac:	da 01       	movw	r26, r20
+  ae:	da 01       	movw	r26, r20
+  b0:	da 01       	movw	r26, r20
+  b2:	da 01       	movw	r26, r20
+  b4:	da 01       	movw	r26, r20
+  b6:	da 01       	movw	r26, r20
+  b8:	d8 01       	movw	r26, r16
+  ba:	da 01       	movw	r26, r20
+  bc:	da 01       	movw	r26, r20
+  be:	da 01       	movw	r26, r20
+  c0:	da 01       	movw	r26, r20
+  c2:	da 01       	movw	r26, r20
+  c4:	da 01       	movw	r26, r20
+  c6:	da 01       	movw	r26, r20
+  c8:	dc 01       	movw	r26, r24
+  ca:	da 01       	movw	r26, r20
+  cc:	da 01       	movw	r26, r20
+  ce:	da 01       	movw	r26, r20
+  d0:	da 01       	movw	r26, r20
+  d2:	da 01       	movw	r26, r20
+  d4:	da 01       	movw	r26, r20
+  d6:	da 01       	movw	r26, r20
+  d8:	dc 01       	movw	r26, r24
+  da:	da 01       	movw	r26, r20
+  dc:	da 01       	movw	r26, r20
+  de:	da 01       	movw	r26, r20
+  e0:	da 01       	movw	r26, r20
+  e2:	da 01       	movw	r26, r20
+  e4:	da 01       	movw	r26, r20
+  e6:	da 01       	movw	r26, r20
+  e8:	d8 01       	movw	r26, r16
+  ea:	da 01       	movw	r26, r20
+  ec:	da 01       	movw	r26, r20
+  ee:	da 01       	movw	r26, r20
+  f0:	da 01       	movw	r26, r20
+  f2:	da 01       	movw	r26, r20
+  f4:	da 01       	movw	r26, r20
+  f6:	da 01       	movw	r26, r20
+  f8:	dc 01       	movw	r26, r24
+  fa:	da 01       	movw	r26, r20
+  fc:	da 01       	movw	r26, r20
+  fe:	da 01       	movw	r26, r20
+ 100:	da 01       	movw	r26, r20
+ 102:	da 01       	movw	r26, r20
+ 104:	da 01       	movw	r26, r20
+ 106:	da 01       	movw	r26, r20
+ 108:	d8 01       	movw	r26, r16
+ 10a:	da 01       	movw	r26, r20
+ 10c:	da 01       	movw	r26, r20
+ 10e:	da 01       	movw	r26, r20
+ 110:	da 01       	movw	r26, r20
+ 112:	da 01       	movw	r26, r20
+ 114:	da 01       	movw	r26, r20
+ 116:	da 01       	movw	r26, r20
+ 118:	dc 01       	movw	r26, r24
+
+0000011a <__ctors_end>:
+ 11a:	11 24       	eor	r1, r1
+ 11c:	1f be       	out	0x3f, r1	; 63
+ 11e:	cf ef       	ldi	r28, 0xFF	; 255
+ 120:	d8 e0       	ldi	r29, 0x08	; 8
+ 122:	de bf       	out	0x3e, r29	; 62
+ 124:	cd bf       	out	0x3d, r28	; 61
+
+00000126 <__do_copy_data>:
+ 126:	11 e0       	ldi	r17, 0x01	; 1
+ 128:	a0 e0       	ldi	r26, 0x00	; 0
+ 12a:	b1 e0       	ldi	r27, 0x01	; 1
+ 12c:	e2 eb       	ldi	r30, 0xB2	; 178
+ 12e:	f7 e0       	ldi	r31, 0x07	; 7
+ 130:	02 c0       	rjmp	.+4      	; 0x136 <__do_copy_data+0x10>
+ 132:	05 90       	lpm	r0, Z+
+ 134:	0d 92       	st	X+, r0
+ 136:	a6 39       	cpi	r26, 0x96	; 150
+ 138:	b1 07       	cpc	r27, r17
+ 13a:	d9 f7       	brne	.-10     	; 0x132 <__do_copy_data+0xc>
+
+0000013c <__do_clear_bss>:
+ 13c:	21 e0       	ldi	r18, 0x01	; 1
+ 13e:	a6 e9       	ldi	r26, 0x96	; 150
+ 140:	b1 e0       	ldi	r27, 0x01	; 1
+ 142:	01 c0       	rjmp	.+2      	; 0x146 <.do_clear_bss_start>
+
+00000144 <.do_clear_bss_loop>:
+ 144:	1d 92       	st	X+, r1
+
+00000146 <.do_clear_bss_start>:
+ 146:	ad 39       	cpi	r26, 0x9D	; 157
+ 148:	b2 07       	cpc	r27, r18
+ 14a:	e1 f7       	brne	.-8      	; 0x144 <.do_clear_bss_loop>
+ 14c:	0e 94 2d 02 	call	0x45a	; 0x45a <main>
+ 150:	0c 94 d7 03 	jmp	0x7ae	; 0x7ae <_exit>
+
+00000154 <__bad_interrupt>:
+ 154:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000158 <_Z10usart_initv>:
+
+char buffer [ 10 ];
+
+void usart_init ( void )
+{
+	UBRR0H = ( unsigned char ) ( UBRRVAL >> 8 ) ;     // High byte.
+ 158:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+	UBRR0L = ( unsigned char ) UBRRVAL;     		  // Low byte.
+ 15c:	87 e6       	ldi	r24, 0x67	; 103
+ 15e:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+	UCSR0B |=  ( 1 << TXEN0 )  |  ( 1 << RXEN0 ) ;	  // Enable Transmitter and Receiver.
+ 162:	e1 ec       	ldi	r30, 0xC1	; 193
+ 164:	f0 e0       	ldi	r31, 0x00	; 0
+ 166:	80 81       	ld	r24, Z
+ 168:	88 61       	ori	r24, 0x18	; 24
+ 16a:	80 83       	st	Z, r24
+	UCSR0C |=  ( 1 << UCSZ01 ) | ( 1 << UCSZ00 ) ; 	  // Set data frame format: asynchronous mode,no parity, 1 stop bit, 8 bit size.
+ 16c:	a2 ec       	ldi	r26, 0xC2	; 194
+ 16e:	b0 e0       	ldi	r27, 0x00	; 0
+ 170:	8c 91       	ld	r24, X
+ 172:	86 60       	ori	r24, 0x06	; 6
+ 174:	8c 93       	st	X, r24
+	UCSR0B |= ( 1 << RXCIE0 );                        // Enable the USART Receive interrupt.
+ 176:	80 81       	ld	r24, Z
+ 178:	80 68       	ori	r24, 0x80	; 128
+ 17a:	80 83       	st	Z, r24
+ 17c:	08 95       	ret
+
+0000017e <_Z8sendbyteh>:
+} 
+
+void sendbyte ( unsigned char MSG )
+{
+	while ( ( UCSR0A & ( 1 << UDRE0 ) ) == 0 ) ;   // Wait if a byte is being transmitted
+ 17e:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 182:	95 ff       	sbrs	r25, 5
+ 184:	fc cf       	rjmp	.-8      	; 0x17e <_Z8sendbyteh>
+	UDR0 = MSG;
+ 186:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 18a:	08 95       	ret
+
+0000018c <_Z7sendstrPh>:
+}
+
+void sendstr ( unsigned char * s )
+{
+ 18c:	0f 93       	push	r16
+ 18e:	1f 93       	push	r17
+ 190:	cf 93       	push	r28
+ 192:	8c 01       	movw	r16, r24
+	unsigned char i = 0;
+ 194:	c0 e0       	ldi	r28, 0x00	; 0
+	while ( s [ i ]  != '\0' )
+ 196:	f8 01       	movw	r30, r16
+ 198:	ec 0f       	add	r30, r28
+ 19a:	f1 1d       	adc	r31, r1
+ 19c:	80 81       	ld	r24, Z
+ 19e:	88 23       	and	r24, r24
+ 1a0:	21 f0       	breq	.+8      	; 0x1aa <_Z7sendstrPh+0x1e>
+	{
+		sendbyte ( s [ i ] );
+ 1a2:	0e 94 bf 00 	call	0x17e	; 0x17e <_Z8sendbyteh>
+		i ++;
+ 1a6:	cf 5f       	subi	r28, 0xFF	; 255
+}
+
+void sendstr ( unsigned char * s )
+{
+	unsigned char i = 0;
+	while ( s [ i ]  != '\0' )
+ 1a8:	f6 cf       	rjmp	.-20     	; 0x196 <_Z7sendstrPh+0xa>
+	{
+		sendbyte ( s [ i ] );
+		i ++;
+	}
+	return;
+}
+ 1aa:	cf 91       	pop	r28
+ 1ac:	1f 91       	pop	r17
+ 1ae:	0f 91       	pop	r16
+ 1b0:	08 95       	ret
+
+000001b2 <_Z11receiveBytev>:
+
+unsigned char receiveByte ( void )
+{
+	uint16_t i = 0;
+ 1b2:	80 e0       	ldi	r24, 0x00	; 0
+ 1b4:	90 e0       	ldi	r25, 0x00	; 0
+	while ( ( ! ( UCSR0A & ( 1 << RXC0 ) ) ) && i < 1000 )
+ 1b6:	20 91 c0 00 	lds	r18, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 1ba:	22 23       	and	r18, r18
+ 1bc:	34 f0       	brlt	.+12     	; 0x1ca <_Z11receiveBytev+0x18>
+ 1be:	88 3e       	cpi	r24, 0xE8	; 232
+ 1c0:	23 e0       	ldi	r18, 0x03	; 3
+ 1c2:	92 07       	cpc	r25, r18
+ 1c4:	20 f0       	brcs	.+8      	; 0x1ce <_Z11receiveBytev+0x1c>
+ 1c6:	20 e0       	ldi	r18, 0x00	; 0
+ 1c8:	03 c0       	rjmp	.+6      	; 0x1d0 <_Z11receiveBytev+0x1e>
+ 1ca:	20 e0       	ldi	r18, 0x00	; 0
+ 1cc:	01 c0       	rjmp	.+2      	; 0x1d0 <_Z11receiveBytev+0x1e>
+ 1ce:	21 e0       	ldi	r18, 0x01	; 1
+ 1d0:	22 23       	and	r18, r18
+ 1d2:	31 f0       	breq	.+12     	; 0x1e0 <_Z11receiveBytev+0x2e>
+	{
+		i ++;
+ 1d4:	01 96       	adiw	r24, 0x01	; 1
+		if ( i == 1000 )
+ 1d6:	88 3e       	cpi	r24, 0xE8	; 232
+ 1d8:	23 e0       	ldi	r18, 0x03	; 3
+ 1da:	92 07       	cpc	r25, r18
+ 1dc:	61 f7       	brne	.-40     	; 0x1b6 <_Z11receiveBytev+0x4>
+ 1de:	03 c0       	rjmp	.+6      	; 0x1e6 <_Z11receiveBytev+0x34>
+		{
+			return '~';
+		}
+	}
+	return UDR0;
+ 1e0:	80 91 c6 00 	lds	r24, 0x00C6	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 1e4:	08 95       	ret
+	while ( ( ! ( UCSR0A & ( 1 << RXC0 ) ) ) && i < 1000 )
+	{
+		i ++;
+		if ( i == 1000 )
+		{
+			return '~';
+ 1e6:	8e e7       	ldi	r24, 0x7E	; 126
+		}
+	}
+	return UDR0;
+}
+ 1e8:	08 95       	ret
+
+000001ea <_Z16receiveBluetoothv>:
+
+void receiveBluetooth ()
+{
+	rxdata = receiveByte ();
+ 1ea:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <_Z11receiveBytev>
+ 1ee:	80 93 9c 01 	sts	0x019C, r24	; 0x80019c <rxdata>
+	if ( rxdata == 'y' )
+ 1f2:	89 37       	cpi	r24, 0x79	; 121
+ 1f4:	21 f4       	brne	.+8      	; 0x1fe <_Z16receiveBluetoothv+0x14>
+	{
+		bluetooth = true;              // The bluetooth flag is true, so the water pump will be set.
+ 1f6:	81 e0       	ldi	r24, 0x01	; 1
+ 1f8:	80 93 9b 01 	sts	0x019B, r24	; 0x80019b <bluetooth>
+ 1fc:	08 95       	ret
+	}
+	else if ( rxdata == 'n' )
+ 1fe:	8e 36       	cpi	r24, 0x6E	; 110
+ 200:	11 f4       	brne	.+4      	; 0x206 <_Z16receiveBluetoothv+0x1c>
+	{
+		bluetooth = false;             // The bluetooth flag is false, so the water pump will not be set.
+ 202:	10 92 9b 01 	sts	0x019B, r1	; 0x80019b <bluetooth>
+ 206:	08 95       	ret
+
+00000208 <_Z17sendBluetoothDataPhS_S_>:
+	}
+	return;
+}
+
+void sendBluetoothData ( unsigned char * HumString, unsigned char * TempString, unsigned char * DateString )
+{
+ 208:	ef 92       	push	r14
+ 20a:	ff 92       	push	r15
+ 20c:	0f 93       	push	r16
+ 20e:	1f 93       	push	r17
+ 210:	cf 93       	push	r28
+ 212:	df 93       	push	r29
+ 214:	7c 01       	movw	r14, r24
+ 216:	8b 01       	movw	r16, r22
+ 218:	ea 01       	movw	r28, r20
+	sendstr ( startMsg );
+ 21a:	80 e1       	ldi	r24, 0x10	; 16
+ 21c:	91 e0       	ldi	r25, 0x01	; 1
+ 21e:	0e 94 c6 00 	call	0x18c	; 0x18c <_Z7sendstrPh>
+	sendstr ( statusLamp );
+ 222:	80 e0       	ldi	r24, 0x00	; 0
+ 224:	91 e0       	ldi	r25, 0x01	; 1
+ 226:	0e 94 c6 00 	call	0x18c	; 0x18c <_Z7sendstrPh>
+	{
+		sendstr ( onStatus );
+	}
+	else
+	{
+		sendstr ( offStatus );
+ 22a:	85 e5       	ldi	r24, 0x55	; 85
+ 22c:	91 e0       	ldi	r25, 0x01	; 1
+ 22e:	0e 94 c6 00 	call	0x18c	; 0x18c <_Z7sendstrPh>
+	}
+	sendstr ( HumString );
+ 232:	c7 01       	movw	r24, r14
+ 234:	0e 94 c6 00 	call	0x18c	; 0x18c <_Z7sendstrPh>
+	sendstr ( TempString );
+ 238:	c8 01       	movw	r24, r16
+ 23a:	0e 94 c6 00 	call	0x18c	; 0x18c <_Z7sendstrPh>
+	sendstr ( DateString );
+ 23e:	ce 01       	movw	r24, r28
+ 240:	0e 94 c6 00 	call	0x18c	; 0x18c <_Z7sendstrPh>
+	return;
+}
+ 244:	df 91       	pop	r29
+ 246:	cf 91       	pop	r28
+ 248:	1f 91       	pop	r17
+ 24a:	0f 91       	pop	r16
+ 24c:	ff 90       	pop	r15
+ 24e:	ef 90       	pop	r14
+ 250:	08 95       	ret
+
+00000252 <_Z5setupv>:
+
+void setup () 
+{
+	DDRC = 0x00;                       // Port C is declared as input.
+ 252:	17 b8       	out	0x07, r1	; 7
+	DDRB = 0xFF;                       // Port B is declared as output.
+ 254:	8f ef       	ldi	r24, 0xFF	; 255
+ 256:	84 b9       	out	0x04, r24	; 4
+	PORTB = 0x03;                      // Port B is set to output 0x03.
+ 258:	83 e0       	ldi	r24, 0x03	; 3
+ 25a:	85 b9       	out	0x05, r24	; 5
+	usart_init();                      // Initialize the USART.
+ 25c:	0e 94 ac 00 	call	0x158	; 0x158 <_Z10usart_initv>
+
+	twi_INIT ();                       // Initialize the TWI communication protocol.
+ 260:	0e 94 98 01 	call	0x330	; 0x330 <_Z8twi_INITv>
+ 264:	08 95       	ret
+
+00000266 <_Z12setWaterPumpv>:
+	//DS3231_setTime ( 20, 8, 10, 4, 12, 5, 22 ); // Set the date and time.
+}
+
+void setWaterPump ()
+{
+	PORTB &= ~ ( 1 << PORTB0 );          // Set PB0 high, i.e. the water pump.
+ 266:	85 b1       	in	r24, 0x05	; 5
+ 268:	8e 7f       	andi	r24, 0xFE	; 254
+ 26a:	85 b9       	out	0x05, r24	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 26c:	2f ef       	ldi	r18, 0xFF	; 255
+ 26e:	83 e2       	ldi	r24, 0x23	; 35
+ 270:	94 ef       	ldi	r25, 0xF4	; 244
+ 272:	21 50       	subi	r18, 0x01	; 1
+ 274:	80 40       	sbci	r24, 0x00	; 0
+ 276:	90 40       	sbci	r25, 0x00	; 0
+ 278:	e1 f7       	brne	.-8      	; 0x272 <_Z12setWaterPumpv+0xc>
+ 27a:	00 c0       	rjmp	.+0      	; 0x27c <_Z12setWaterPumpv+0x16>
+ 27c:	00 00       	nop
+	_delay_ms ( 5000 );                // The water pump will be on for 5 seconds.
+	PORTB |= ( 1 << PORTB0 );        // Turn off the water pump.
+ 27e:	85 b1       	in	r24, 0x05	; 5
+ 280:	81 60       	ori	r24, 0x01	; 1
+ 282:	85 b9       	out	0x05, r24	; 5
+	bluetooth = false;
+ 284:	10 92 9b 01 	sts	0x019B, r1	; 0x80019b <bluetooth>
+ 288:	08 95       	ret
+
+0000028a <_Z10updateLamph>:
+	{
+		PORTB &= ~ ( 1 << PORTB1 );    // Set PB1 low, i.e. set the lamp.
+	}
+	else
+	{
+		PORTB |= ( 1 << PORTB1 );      // Set PB1 high, i.e. deactivate the lamp.
+ 28a:	85 b1       	in	r24, 0x05	; 5
+ 28c:	82 60       	ori	r24, 0x02	; 2
+ 28e:	85 b9       	out	0x05, r24	; 5
+ 290:	08 95       	ret
+
+00000292 <_Z12requestDHT11v>:
+	return;
+}
+
+void requestDHT11 ()				   // Send start pulse/request to the microcontroller.
+{
+	DDRC |= ( 1 << PC0 );
+ 292:	87 b1       	in	r24, 0x07	; 7
+ 294:	81 60       	ori	r24, 0x01	; 1
+ 296:	87 b9       	out	0x07, r24	; 7
+	PORTC &= ~ ( 1 << PC0 );	       // Set pin PC0 low.
+ 298:	88 b1       	in	r24, 0x08	; 8
+ 29a:	8e 7f       	andi	r24, 0xFE	; 254
+ 29c:	88 b9       	out	0x08, r24	; 8
+ 29e:	2f e7       	ldi	r18, 0x7F	; 127
+ 2a0:	88 e3       	ldi	r24, 0x38	; 56
+ 2a2:	91 e0       	ldi	r25, 0x01	; 1
+ 2a4:	21 50       	subi	r18, 0x01	; 1
+ 2a6:	80 40       	sbci	r24, 0x00	; 0
+ 2a8:	90 40       	sbci	r25, 0x00	; 0
+ 2aa:	e1 f7       	brne	.-8      	; 0x2a4 <_Z12requestDHT11v+0x12>
+ 2ac:	00 c0       	rjmp	.+0      	; 0x2ae <_Z12requestDHT11v+0x1c>
+ 2ae:	00 00       	nop
+	_delay_ms ( 25 );			       // Wait for 20 ms.
+	PORTC |= ( 1 << PC0 );	           // Set pin PC0 high.
+ 2b0:	88 b1       	in	r24, 0x08	; 8
+ 2b2:	81 60       	ori	r24, 0x01	; 1
+ 2b4:	88 b9       	out	0x08, r24	; 8
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 2b6:	20 ea       	ldi	r18, 0xA0	; 160
+ 2b8:	2a 95       	dec	r18
+ 2ba:	f1 f7       	brne	.-4      	; 0x2b8 <_Z12requestDHT11v+0x26>
+	_delay_us ( 30 );			       // Wait for 20 ms.
+	DDRC &= ~ ( 1 << PC0 );
+ 2bc:	87 b1       	in	r24, 0x07	; 7
+ 2be:	8e 7f       	andi	r24, 0xFE	; 254
+ 2c0:	87 b9       	out	0x07, r24	; 7
+ 2c2:	08 95       	ret
+
+000002c4 <_Z13responseDHT11Rb>:
+	return;
+}
+
+void responseDHT11 ( bool & flag )	   // Receive response from DHT11
+{
+	uint16_t j = 0;
+ 2c4:	20 e0       	ldi	r18, 0x00	; 0
+ 2c6:	30 e0       	ldi	r19, 0x00	; 0
+	while ( PINC & ( 1 << PC0 ) )
+ 2c8:	30 9b       	sbis	0x06, 0	; 6
+ 2ca:	0a c0       	rjmp	.+20     	; 0x2e0 <_Z13responseDHT11Rb+0x1c>
+	{
+		j ++;
+ 2cc:	2f 5f       	subi	r18, 0xFF	; 255
+ 2ce:	3f 4f       	sbci	r19, 0xFF	; 255
+		if ( j > 1000 )
+ 2d0:	29 3e       	cpi	r18, 0xE9	; 233
+ 2d2:	43 e0       	ldi	r20, 0x03	; 3
+ 2d4:	34 07       	cpc	r19, r20
+ 2d6:	c0 f3       	brcs	.-16     	; 0x2c8 <_Z13responseDHT11Rb+0x4>
+		{
+			flag = true;
+ 2d8:	21 e0       	ldi	r18, 0x01	; 1
+ 2da:	fc 01       	movw	r30, r24
+ 2dc:	20 83       	st	Z, r18
+			return;
+ 2de:	08 95       	ret
+		}
+	}
+	while ( ( PINC & ( 1 << PC0 ) ) == 0 )
+ 2e0:	30 9b       	sbis	0x06, 0	; 6
+ 2e2:	fe cf       	rjmp	.-4      	; 0x2e0 <_Z13responseDHT11Rb+0x1c>
+	{
+		;
+	}
+	while ( PINC & ( 1 << PC0 ) )
+ 2e4:	30 99       	sbic	0x06, 0	; 6
+ 2e6:	fe cf       	rjmp	.-4      	; 0x2e4 <_Z13responseDHT11Rb+0x20>
+	{
+		;
+	}
+	flag = false;
+ 2e8:	fc 01       	movw	r30, r24
+ 2ea:	10 82       	st	Z, r1
+ 2ec:	08 95       	ret
+
+000002ee <_Z16receiveDataDHT11v>:
+	return;
+}
+
+uint8_t receiveDataDHT11 ()			                  // Receive data from the DHT11 sensor.
+{
+	DHT11Data [ 4 ] = 0;
+ 2ee:	10 92 9a 01 	sts	0x019A, r1	; 0x80019a <__data_end+0x4>
+	for ( uint8_t q = 0; q < 8; q ++ )
+ 2f2:	20 e0       	ldi	r18, 0x00	; 0
+ 2f4:	28 30       	cpi	r18, 0x08	; 8
+ 2f6:	c8 f4       	brcc	.+50     	; 0x32a <_Z16receiveDataDHT11v+0x3c>
+	{
+		while ( ( PINC & ( 1 << PC0 ) ) == 0 )        // Check if received bit 0 or 1.
+ 2f8:	30 9b       	sbis	0x06, 0	; 6
+ 2fa:	fe cf       	rjmp	.-4      	; 0x2f8 <_Z16receiveDataDHT11v+0xa>
+ 2fc:	80 ea       	ldi	r24, 0xA0	; 160
+ 2fe:	8a 95       	dec	r24
+ 300:	f1 f7       	brne	.-4      	; 0x2fe <_Z16receiveDataDHT11v+0x10>
+		{
+			;
+		}
+		_delay_us ( 30 );
+		if ( PINC & ( 1 << PC0 ) )                    // If high pulse is greater than 30 us.
+ 302:	30 9b       	sbis	0x06, 0	; 6
+ 304:	09 c0       	rjmp	.+18     	; 0x318 <_Z16receiveDataDHT11v+0x2a>
+		{
+			DHT11Data [ 4 ] = ( DHT11Data [ 4 ] << 1 ) | 0x01;  	              // Then it is HIGH.
+ 306:	e6 e9       	ldi	r30, 0x96	; 150
+ 308:	f1 e0       	ldi	r31, 0x01	; 1
+ 30a:	84 81       	ldd	r24, Z+4	; 0x04
+ 30c:	90 e0       	ldi	r25, 0x00	; 0
+ 30e:	88 0f       	add	r24, r24
+ 310:	99 1f       	adc	r25, r25
+ 312:	81 60       	ori	r24, 0x01	; 1
+ 314:	84 83       	std	Z+4, r24	; 0x04
+ 316:	05 c0       	rjmp	.+10     	; 0x322 <_Z16receiveDataDHT11v+0x34>
+		}
+		else			                              // Otherwise it is LOW.
+		{
+			DHT11Data [ 4 ] = ( DHT11Data [ 4 ] << 1 );
+ 318:	e6 e9       	ldi	r30, 0x96	; 150
+ 31a:	f1 e0       	ldi	r31, 0x01	; 1
+ 31c:	84 81       	ldd	r24, Z+4	; 0x04
+ 31e:	88 0f       	add	r24, r24
+ 320:	84 83       	std	Z+4, r24	; 0x04
+		}
+		while ( PINC & ( 1 << PC0 ) )
+ 322:	30 99       	sbic	0x06, 0	; 6
+ 324:	fe cf       	rjmp	.-4      	; 0x322 <_Z16receiveDataDHT11v+0x34>
+}
+
+uint8_t receiveDataDHT11 ()			                  // Receive data from the DHT11 sensor.
+{
+	DHT11Data [ 4 ] = 0;
+	for ( uint8_t q = 0; q < 8; q ++ )
+ 326:	2f 5f       	subi	r18, 0xFF	; 255
+ 328:	e5 cf       	rjmp	.-54     	; 0x2f4 <_Z16receiveDataDHT11v+0x6>
+		{
+			;
+		}
+	}
+	return DHT11Data [ 4 ];
+}
+ 32a:	80 91 9a 01 	lds	r24, 0x019A	; 0x80019a <__data_end+0x4>
+ 32e:	08 95       	ret
+
+00000330 <_Z8twi_INITv>:
+
+	twi_read(DS3231_ADDRESS, 1, DS3231_REG_TEMPM, tmpMsbbuf);
+	twi_read(DS3231_ADDRESS, 1, DS3231_REG_TEMPL, tmpLsbbuf);
+	
+	return (float)tmpMsbbuf[0] + ((tmpLsbbuf[0] >> 6) * 0.25f);
+}
+ 330:	87 b1       	in	r24, 0x07	; 7
+ 332:	8f 7c       	andi	r24, 0xCF	; 207
+ 334:	87 b9       	out	0x07, r24	; 7
+ 336:	88 b1       	in	r24, 0x08	; 8
+ 338:	8f 7c       	andi	r24, 0xCF	; 207
+ 33a:	88 b9       	out	0x08, r24	; 8
+ 33c:	10 92 b9 00 	sts	0x00B9, r1	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 340:	8c e0       	ldi	r24, 0x0C	; 12
+ 342:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__TEXT_REGION_LENGTH__+0x7f80b8>
+ 346:	84 e0       	ldi	r24, 0x04	; 4
+ 348:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 34c:	08 95       	ret
+
+0000034e <_Z9twi_STARTv>:
+ 34e:	84 ea       	ldi	r24, 0xA4	; 164
+ 350:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 354:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 358:	88 23       	and	r24, r24
+ 35a:	e4 f7       	brge	.-8      	; 0x354 <_Z9twi_STARTv+0x6>
+ 35c:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 360:	88 7f       	andi	r24, 0xF8	; 248
+ 362:	88 30       	cpi	r24, 0x08	; 8
+ 364:	11 f0       	breq	.+4      	; 0x36a <_Z9twi_STARTv+0x1c>
+ 366:	80 31       	cpi	r24, 0x10	; 16
+ 368:	11 f4       	brne	.+4      	; 0x36e <_Z9twi_STARTv+0x20>
+ 36a:	80 e0       	ldi	r24, 0x00	; 0
+ 36c:	08 95       	ret
+ 36e:	81 e0       	ldi	r24, 0x01	; 1
+ 370:	08 95       	ret
+
+00000372 <_Z8twi_STOPv>:
+ 372:	84 e9       	ldi	r24, 0x94	; 148
+ 374:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 378:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 37c:	84 fd       	sbrc	r24, 4
+ 37e:	fc cf       	rjmp	.-8      	; 0x378 <_Z8twi_STOPv+0x6>
+ 380:	08 95       	ret
+
+00000382 <_Z13twi_writeCharh>:
+ 382:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+ 386:	84 e8       	ldi	r24, 0x84	; 132
+ 388:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 38c:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 390:	88 23       	and	r24, r24
+ 392:	e4 f7       	brge	.-8      	; 0x38c <_Z13twi_writeCharh+0xa>
+ 394:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 398:	e8 2f       	mov	r30, r24
+ 39a:	e8 7f       	andi	r30, 0xF8	; 248
+ 39c:	8e 2f       	mov	r24, r30
+ 39e:	90 e0       	ldi	r25, 0x00	; 0
+ 3a0:	89 35       	cpi	r24, 0x59	; 89
+ 3a2:	91 05       	cpc	r25, r1
+ 3a4:	38 f4       	brcc	.+14     	; 0x3b4 <_Z13twi_writeCharh+0x32>
+ 3a6:	fc 01       	movw	r30, r24
+ 3a8:	ec 5c       	subi	r30, 0xCC	; 204
+ 3aa:	ff 4f       	sbci	r31, 0xFF	; 255
+ 3ac:	0c 94 81 03 	jmp	0x702	; 0x702 <__tablejump2__>
+ 3b0:	80 e0       	ldi	r24, 0x00	; 0
+ 3b2:	08 95       	ret
+ 3b4:	82 e0       	ldi	r24, 0x02	; 2
+ 3b6:	08 95       	ret
+ 3b8:	81 e0       	ldi	r24, 0x01	; 1
+ 3ba:	08 95       	ret
+
+000003bc <_Z16twi_readChar_ACKv>:
+ 3bc:	84 ec       	ldi	r24, 0xC4	; 196
+ 3be:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 3c2:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 3c6:	88 23       	and	r24, r24
+ 3c8:	e4 f7       	brge	.-8      	; 0x3c2 <_Z16twi_readChar_ACKv+0x6>
+ 3ca:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+ 3ce:	08 95       	ret
+
+000003d0 <_Z8bcdToDech>:
+ 3d0:	98 2f       	mov	r25, r24
+ 3d2:	92 95       	swap	r25
+ 3d4:	9f 70       	andi	r25, 0x0F	; 15
+ 3d6:	99 0f       	add	r25, r25
+ 3d8:	29 2f       	mov	r18, r25
+ 3da:	22 0f       	add	r18, r18
+ 3dc:	22 0f       	add	r18, r18
+ 3de:	92 0f       	add	r25, r18
+ 3e0:	8f 70       	andi	r24, 0x0F	; 15
+ 3e2:	89 0f       	add	r24, r25
+ 3e4:	08 95       	ret
+
+000003e6 <_Z14DS3231_getTimePh>:
+ 3e6:	cf 93       	push	r28
+ 3e8:	df 93       	push	r29
+ 3ea:	ec 01       	movw	r28, r24
+ 3ec:	0e 94 a7 01 	call	0x34e	; 0x34e <_Z9twi_STARTv>
+ 3f0:	80 ed       	ldi	r24, 0xD0	; 208
+ 3f2:	0e 94 c1 01 	call	0x382	; 0x382 <_Z13twi_writeCharh>
+ 3f6:	80 e0       	ldi	r24, 0x00	; 0
+ 3f8:	0e 94 c1 01 	call	0x382	; 0x382 <_Z13twi_writeCharh>
+ 3fc:	0e 94 b9 01 	call	0x372	; 0x372 <_Z8twi_STOPv>
+ 400:	0e 94 a7 01 	call	0x34e	; 0x34e <_Z9twi_STARTv>
+ 404:	81 ed       	ldi	r24, 0xD1	; 209
+ 406:	0e 94 c1 01 	call	0x382	; 0x382 <_Z13twi_writeCharh>
+ 40a:	0e 94 de 01 	call	0x3bc	; 0x3bc <_Z16twi_readChar_ACKv>
+ 40e:	8f 77       	andi	r24, 0x7F	; 127
+ 410:	0e 94 e8 01 	call	0x3d0	; 0x3d0 <_Z8bcdToDech>
+ 414:	88 83       	st	Y, r24
+ 416:	0e 94 de 01 	call	0x3bc	; 0x3bc <_Z16twi_readChar_ACKv>
+ 41a:	0e 94 e8 01 	call	0x3d0	; 0x3d0 <_Z8bcdToDech>
+ 41e:	89 83       	std	Y+1, r24	; 0x01
+ 420:	0e 94 de 01 	call	0x3bc	; 0x3bc <_Z16twi_readChar_ACKv>
+ 424:	8f 73       	andi	r24, 0x3F	; 63
+ 426:	0e 94 e8 01 	call	0x3d0	; 0x3d0 <_Z8bcdToDech>
+ 42a:	8a 83       	std	Y+2, r24	; 0x02
+ 42c:	0e 94 de 01 	call	0x3bc	; 0x3bc <_Z16twi_readChar_ACKv>
+ 430:	0e 94 e8 01 	call	0x3d0	; 0x3d0 <_Z8bcdToDech>
+ 434:	8b 83       	std	Y+3, r24	; 0x03
+ 436:	0e 94 de 01 	call	0x3bc	; 0x3bc <_Z16twi_readChar_ACKv>
+ 43a:	0e 94 e8 01 	call	0x3d0	; 0x3d0 <_Z8bcdToDech>
+ 43e:	8c 83       	std	Y+4, r24	; 0x04
+ 440:	0e 94 de 01 	call	0x3bc	; 0x3bc <_Z16twi_readChar_ACKv>
+ 444:	0e 94 e8 01 	call	0x3d0	; 0x3d0 <_Z8bcdToDech>
+ 448:	8d 83       	std	Y+5, r24	; 0x05
+ 44a:	0e 94 de 01 	call	0x3bc	; 0x3bc <_Z16twi_readChar_ACKv>
+ 44e:	0e 94 e8 01 	call	0x3d0	; 0x3d0 <_Z8bcdToDech>
+ 452:	8e 83       	std	Y+6, r24	; 0x06
+ 454:	df 91       	pop	r29
+ 456:	cf 91       	pop	r28
+ 458:	08 95       	ret
+
+0000045a <main>:
+
+unsigned char dht11Error [] = "Error retrieving the DHT11 data.\n\n";
+
+
+int main ()
+{
+ 45a:	cf 93       	push	r28
+ 45c:	df 93       	push	r29
+ 45e:	cd b7       	in	r28, 0x3d	; 61
+ 460:	de b7       	in	r29, 0x3e	; 62
+ 462:	cf 59       	subi	r28, 0x9F	; 159
+ 464:	d1 09       	sbc	r29, r1
+ 466:	0f b6       	in	r0, 0x3f	; 63
+ 468:	f8 94       	cli
+ 46a:	de bf       	out	0x3e, r29	; 62
+ 46c:	0f be       	out	0x3f, r0	; 63
+ 46e:	cd bf       	out	0x3d, r28	; 61
+	setup ();
+ 470:	0e 94 29 01 	call	0x252	; 0x252 <_Z5setupv>
+	char DHT11DataString [ 4 ] [ 5 ];
+	char DS3231DataString [ 7 ] [ 2 ];                                    // The data is as follows: second, minute, hour, dayOfWeek, dayOfMonth, month and year.
+	uint8_t DS3231Data [ 7 ];             
+	while ( true )
+	{
+		bool retry = true;
+ 474:	81 e0       	ldi	r24, 0x01	; 1
+ 476:	c1 56       	subi	r28, 0x61	; 97
+ 478:	df 4f       	sbci	r29, 0xFF	; 255
+ 47a:	88 83       	st	Y, r24
+ 47c:	cf 59       	subi	r28, 0x9F	; 159
+ 47e:	d0 40       	sbci	r29, 0x00	; 0
+		while ( retry )
+ 480:	c1 56       	subi	r28, 0x61	; 97
+ 482:	df 4f       	sbci	r29, 0xFF	; 255
+ 484:	88 81       	ld	r24, Y
+ 486:	cf 59       	subi	r28, 0x9F	; 159
+ 488:	d0 40       	sbci	r29, 0x00	; 0
+ 48a:	88 23       	and	r24, r24
+ 48c:	41 f0       	breq	.+16     	; 0x49e <main+0x44>
+		{
+			requestDHT11 ();
+ 48e:	0e 94 49 01 	call	0x292	; 0x292 <_Z12requestDHT11v>
+			responseDHT11 ( retry );
+ 492:	ce 01       	movw	r24, r28
+ 494:	81 56       	subi	r24, 0x61	; 97
+ 496:	9f 4f       	sbci	r25, 0xFF	; 255
+ 498:	0e 94 62 01 	call	0x2c4	; 0x2c4 <_Z13responseDHT11Rb>
+	char DS3231DataString [ 7 ] [ 2 ];                                    // The data is as follows: second, minute, hour, dayOfWeek, dayOfMonth, month and year.
+	uint8_t DS3231Data [ 7 ];             
+	while ( true )
+	{
+		bool retry = true;
+		while ( retry )
+ 49c:	f1 cf       	rjmp	.-30     	; 0x480 <main+0x26>
+ 49e:	00 e0       	ldi	r16, 0x00	; 0
+ 4a0:	10 e0       	ldi	r17, 0x00	; 0
+		{
+			requestDHT11 ();
+			responseDHT11 ( retry );
+		}
+		
+		for ( int i = 0; i < 4; i ++ )
+ 4a2:	04 30       	cpi	r16, 0x04	; 4
+ 4a4:	11 05       	cpc	r17, r1
+ 4a6:	d4 f4       	brge	.+52     	; 0x4dc <main+0x82>
+		{
+			DHT11Data [ i ] = receiveDataDHT11 ();                        // Receive the humidity and temperature from the DHT11.
+ 4a8:	0e 94 77 01 	call	0x2ee	; 0x2ee <_Z16receiveDataDHT11v>
+ 4ac:	f8 01       	movw	r30, r16
+ 4ae:	ea 56       	subi	r30, 0x6A	; 106
+ 4b0:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4b2:	80 83       	st	Z, r24
+			itoa ( DHT11Data [ i ], & DHT11DataString [ i ] [ 0 ] , 10 ); // Convert the value retrieved from the sensor.
+ 4b4:	b8 01       	movw	r22, r16
+ 4b6:	66 0f       	add	r22, r22
+ 4b8:	77 1f       	adc	r23, r23
+ 4ba:	66 0f       	add	r22, r22
+ 4bc:	77 1f       	adc	r23, r23
+ 4be:	60 0f       	add	r22, r16
+ 4c0:	71 1f       	adc	r23, r17
+ 4c2:	21 e0       	ldi	r18, 0x01	; 1
+ 4c4:	30 e0       	ldi	r19, 0x00	; 0
+ 4c6:	2c 0f       	add	r18, r28
+ 4c8:	3d 1f       	adc	r19, r29
+ 4ca:	62 0f       	add	r22, r18
+ 4cc:	73 1f       	adc	r23, r19
+    } else if (__radix < 2 || __radix > 36) {
+	*__s = 0;
+	return __s;
+    } else {
+	extern char *__itoa_ncheck (int, char *, unsigned char);
+	return __itoa_ncheck (__val, __s, __radix);
+ 4ce:	4a e0       	ldi	r20, 0x0A	; 10
+ 4d0:	90 e0       	ldi	r25, 0x00	; 0
+ 4d2:	0e 94 a2 03 	call	0x744	; 0x744 <__itoa_ncheck>
+		{
+			requestDHT11 ();
+			responseDHT11 ( retry );
+		}
+		
+		for ( int i = 0; i < 4; i ++ )
+ 4d6:	0f 5f       	subi	r16, 0xFF	; 255
+ 4d8:	1f 4f       	sbci	r17, 0xFF	; 255
+ 4da:	e3 cf       	rjmp	.-58     	; 0x4a2 <main+0x48>
+			DHT11Data [ i ] = receiveDataDHT11 ();                        // Receive the humidity and temperature from the DHT11.
+			itoa ( DHT11Data [ i ], & DHT11DataString [ i ] [ 0 ] , 10 ); // Convert the value retrieved from the sensor.
+		}
+		
+		char TempHumString [ 31 ];
+		strcpy ( TempHumString, "The humidity is: " );
+ 4dc:	8e 01       	movw	r16, r28
+ 4de:	00 58       	subi	r16, 0x80	; 128
+ 4e0:	1f 4f       	sbci	r17, 0xFF	; 255
+ 4e2:	82 e1       	ldi	r24, 0x12	; 18
+ 4e4:	eb e5       	ldi	r30, 0x5B	; 91
+ 4e6:	f1 e0       	ldi	r31, 0x01	; 1
+ 4e8:	d8 01       	movw	r26, r16
+ 4ea:	01 90       	ld	r0, Z+
+ 4ec:	0d 92       	st	X+, r0
+ 4ee:	8a 95       	dec	r24
+ 4f0:	e1 f7       	brne	.-8      	; 0x4ea <main+0x90>
+		strcat ( TempHumString, & DHT11DataString [ 0 ] [ 0 ] );
+ 4f2:	be 01       	movw	r22, r28
+ 4f4:	6f 5f       	subi	r22, 0xFF	; 255
+ 4f6:	7f 4f       	sbci	r23, 0xFF	; 255
+ 4f8:	c8 01       	movw	r24, r16
+ 4fa:	0e 94 87 03 	call	0x70e	; 0x70e <strcat>
+		strcat ( TempHumString, "." );
+ 4fe:	f8 01       	movw	r30, r16
+ 500:	01 90       	ld	r0, Z+
+ 502:	00 20       	and	r0, r0
+ 504:	e9 f7       	brne	.-6      	; 0x500 <main+0xa6>
+ 506:	31 97       	sbiw	r30, 0x01	; 1
+ 508:	0f 2e       	mov	r0, r31
+ 50a:	fe e2       	ldi	r31, 0x2E	; 46
+ 50c:	ef 2e       	mov	r14, r31
+ 50e:	f1 2c       	mov	r15, r1
+ 510:	f0 2d       	mov	r31, r0
+ 512:	f1 82       	std	Z+1, r15	; 0x01
+ 514:	e0 82       	st	Z, r14
+		strcat ( TempHumString, & DHT11DataString [ 1 ] [ 0 ] );
+ 516:	be 01       	movw	r22, r28
+ 518:	6a 5f       	subi	r22, 0xFA	; 250
+ 51a:	7f 4f       	sbci	r23, 0xFF	; 255
+ 51c:	c8 01       	movw	r24, r16
+ 51e:	0e 94 87 03 	call	0x70e	; 0x70e <strcat>
+		strcat ( TempHumString, "%.\n" );
+ 522:	f8 01       	movw	r30, r16
+ 524:	01 90       	ld	r0, Z+
+ 526:	00 20       	and	r0, r0
+ 528:	e9 f7       	brne	.-6      	; 0x524 <main+0xca>
+ 52a:	31 97       	sbiw	r30, 0x01	; 1
+ 52c:	85 e2       	ldi	r24, 0x25	; 37
+ 52e:	9e e2       	ldi	r25, 0x2E	; 46
+ 530:	91 83       	std	Z+1, r25	; 0x01
+ 532:	80 83       	st	Z, r24
+ 534:	8a e0       	ldi	r24, 0x0A	; 10
+ 536:	90 e0       	ldi	r25, 0x00	; 0
+ 538:	93 83       	std	Z+3, r25	; 0x03
+ 53a:	82 83       	std	Z+2, r24	; 0x02
+		
+		char TempTempString [ 36 ];
+		strcpy ( TempTempString, "The temperature is: " );
+ 53c:	04 52       	subi	r16, 0x24	; 36
+ 53e:	11 09       	sbc	r17, r1
+ 540:	85 e1       	ldi	r24, 0x15	; 21
+ 542:	ed e6       	ldi	r30, 0x6D	; 109
+ 544:	f1 e0       	ldi	r31, 0x01	; 1
+ 546:	d8 01       	movw	r26, r16
+ 548:	01 90       	ld	r0, Z+
+ 54a:	0d 92       	st	X+, r0
+ 54c:	8a 95       	dec	r24
+ 54e:	e1 f7       	brne	.-8      	; 0x548 <main+0xee>
+		strcat ( TempTempString, & DHT11DataString [ 2 ] [ 0 ] );
+ 550:	be 01       	movw	r22, r28
+ 552:	65 5f       	subi	r22, 0xF5	; 245
+ 554:	7f 4f       	sbci	r23, 0xFF	; 255
+ 556:	c8 01       	movw	r24, r16
+ 558:	0e 94 87 03 	call	0x70e	; 0x70e <strcat>
+		strcat ( TempTempString, "." );
+ 55c:	f8 01       	movw	r30, r16
+ 55e:	01 90       	ld	r0, Z+
+ 560:	00 20       	and	r0, r0
+ 562:	e9 f7       	brne	.-6      	; 0x55e <main+0x104>
+ 564:	31 97       	sbiw	r30, 0x01	; 1
+ 566:	f1 82       	std	Z+1, r15	; 0x01
+ 568:	e0 82       	st	Z, r14
+		strcat ( TempTempString, & DHT11DataString [ 3 ] [ 0 ] );
+ 56a:	be 01       	movw	r22, r28
+ 56c:	60 5f       	subi	r22, 0xF0	; 240
+ 56e:	7f 4f       	sbci	r23, 0xFF	; 255
+ 570:	c8 01       	movw	r24, r16
+ 572:	0e 94 87 03 	call	0x70e	; 0x70e <strcat>
+		strcat ( TempTempString, " °C.\n" );
+ 576:	d8 01       	movw	r26, r16
+ 578:	0d 90       	ld	r0, X+
+ 57a:	00 20       	and	r0, r0
+ 57c:	e9 f7       	brne	.-6      	; 0x578 <main+0x11e>
+ 57e:	11 97       	sbiw	r26, 0x01	; 1
+ 580:	86 e0       	ldi	r24, 0x06	; 6
+ 582:	e2 e8       	ldi	r30, 0x82	; 130
+ 584:	f1 e0       	ldi	r31, 0x01	; 1
+ 586:	01 90       	ld	r0, Z+
+ 588:	0d 92       	st	X+, r0
+ 58a:	8a 95       	dec	r24
+ 58c:	e1 f7       	brne	.-8      	; 0x586 <main+0x12c>
+		
+		unsigned char * humString = reinterpret_cast < unsigned char * > ( TempHumString );
+		unsigned char * tempString = reinterpret_cast < unsigned char * > ( TempTempString );
+		
+		DS3231_getTime ( DS3231Data );
+ 58e:	ce 01       	movw	r24, r28
+ 590:	83 96       	adiw	r24, 0x23	; 35
+ 592:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <_Z14DS3231_getTimePh>
+		for ( int i = 0; i < 7; i ++ )
+ 596:	00 e0       	ldi	r16, 0x00	; 0
+ 598:	10 e0       	ldi	r17, 0x00	; 0
+ 59a:	07 30       	cpi	r16, 0x07	; 7
+ 59c:	11 05       	cpc	r17, r1
+ 59e:	bc f4       	brge	.+46     	; 0x5ce <main+0x174>
+		{
+			itoa ( DS3231Data [ i ], & DS3231DataString [ i ] [ 0 ], 10 );
+ 5a0:	b8 01       	movw	r22, r16
+ 5a2:	66 0f       	add	r22, r22
+ 5a4:	77 1f       	adc	r23, r23
+ 5a6:	85 e1       	ldi	r24, 0x15	; 21
+ 5a8:	90 e0       	ldi	r25, 0x00	; 0
+ 5aa:	8c 0f       	add	r24, r28
+ 5ac:	9d 1f       	adc	r25, r29
+ 5ae:	68 0f       	add	r22, r24
+ 5b0:	79 1f       	adc	r23, r25
+ 5b2:	e3 e2       	ldi	r30, 0x23	; 35
+ 5b4:	f0 e0       	ldi	r31, 0x00	; 0
+ 5b6:	ec 0f       	add	r30, r28
+ 5b8:	fd 1f       	adc	r31, r29
+ 5ba:	e0 0f       	add	r30, r16
+ 5bc:	f1 1f       	adc	r31, r17
+ 5be:	80 81       	ld	r24, Z
+ 5c0:	4a e0       	ldi	r20, 0x0A	; 10
+ 5c2:	90 e0       	ldi	r25, 0x00	; 0
+ 5c4:	0e 94 a2 03 	call	0x744	; 0x744 <__itoa_ncheck>
+		
+		unsigned char * humString = reinterpret_cast < unsigned char * > ( TempHumString );
+		unsigned char * tempString = reinterpret_cast < unsigned char * > ( TempTempString );
+		
+		DS3231_getTime ( DS3231Data );
+		for ( int i = 0; i < 7; i ++ )
+ 5c8:	0f 5f       	subi	r16, 0xFF	; 255
+ 5ca:	1f 4f       	sbci	r17, 0xFF	; 255
+ 5cc:	e6 cf       	rjmp	.-52     	; 0x59a <main+0x140>
+		{
+			itoa ( DS3231Data [ i ], & DS3231DataString [ i ] [ 0 ], 10 );
+		}	
+		
+		char TempDateString  [ 50 ];
+		strcpy ( TempDateString, "The date is: " );
+ 5ce:	8e 01       	movw	r16, r28
+ 5d0:	06 5d       	subi	r16, 0xD6	; 214
+ 5d2:	1f 4f       	sbci	r17, 0xFF	; 255
+ 5d4:	8e e0       	ldi	r24, 0x0E	; 14
+ 5d6:	e8 e8       	ldi	r30, 0x88	; 136
+ 5d8:	f1 e0       	ldi	r31, 0x01	; 1
+ 5da:	d8 01       	movw	r26, r16
+ 5dc:	01 90       	ld	r0, Z+
+ 5de:	0d 92       	st	X+, r0
+ 5e0:	8a 95       	dec	r24
+ 5e2:	e1 f7       	brne	.-8      	; 0x5dc <main+0x182>
+		strncat ( TempDateString, & DS3231DataString [ 4 ] [ 0 ], 2 );
+ 5e4:	42 e0       	ldi	r20, 0x02	; 2
+ 5e6:	50 e0       	ldi	r21, 0x00	; 0
+ 5e8:	be 01       	movw	r22, r28
+ 5ea:	63 5e       	subi	r22, 0xE3	; 227
+ 5ec:	7f 4f       	sbci	r23, 0xFF	; 255
+ 5ee:	c8 01       	movw	r24, r16
+ 5f0:	0e 94 92 03 	call	0x724	; 0x724 <strncat>
+		strncat ( TempDateString, "/", 1 );
+ 5f4:	f8 01       	movw	r30, r16
+ 5f6:	01 90       	ld	r0, Z+
+ 5f8:	00 20       	and	r0, r0
+ 5fa:	e9 f7       	brne	.-6      	; 0x5f6 <main+0x19c>
+ 5fc:	31 97       	sbiw	r30, 0x01	; 1
+ 5fe:	0f 2e       	mov	r0, r31
+ 600:	ff e2       	ldi	r31, 0x2F	; 47
+ 602:	ef 2e       	mov	r14, r31
+ 604:	f1 2c       	mov	r15, r1
+ 606:	f0 2d       	mov	r31, r0
+ 608:	f1 82       	std	Z+1, r15	; 0x01
+ 60a:	e0 82       	st	Z, r14
+		strncat ( TempDateString, & DS3231DataString [ 5 ] [ 0 ], 2 );
+ 60c:	42 e0       	ldi	r20, 0x02	; 2
+ 60e:	50 e0       	ldi	r21, 0x00	; 0
+ 610:	be 01       	movw	r22, r28
+ 612:	61 5e       	subi	r22, 0xE1	; 225
+ 614:	7f 4f       	sbci	r23, 0xFF	; 255
+ 616:	c8 01       	movw	r24, r16
+ 618:	0e 94 92 03 	call	0x724	; 0x724 <strncat>
+		strncat ( TempDateString, "/", 1 );
+ 61c:	f8 01       	movw	r30, r16
+ 61e:	01 90       	ld	r0, Z+
+ 620:	00 20       	and	r0, r0
+ 622:	e9 f7       	brne	.-6      	; 0x61e <main+0x1c4>
+ 624:	31 97       	sbiw	r30, 0x01	; 1
+ 626:	f1 82       	std	Z+1, r15	; 0x01
+ 628:	e0 82       	st	Z, r14
+		strncat ( TempDateString, & DS3231DataString [ 6 ] [ 0 ], 2 );
+ 62a:	42 e0       	ldi	r20, 0x02	; 2
+ 62c:	50 e0       	ldi	r21, 0x00	; 0
+ 62e:	be 01       	movw	r22, r28
+ 630:	6f 5d       	subi	r22, 0xDF	; 223
+ 632:	7f 4f       	sbci	r23, 0xFF	; 255
+ 634:	c8 01       	movw	r24, r16
+ 636:	0e 94 92 03 	call	0x724	; 0x724 <strncat>
+		strncat ( TempDateString, ".  ", 3 );
+ 63a:	f8 01       	movw	r30, r16
+ 63c:	01 90       	ld	r0, Z+
+ 63e:	00 20       	and	r0, r0
+ 640:	e9 f7       	brne	.-6      	; 0x63c <main+0x1e2>
+ 642:	31 97       	sbiw	r30, 0x01	; 1
+ 644:	8e e2       	ldi	r24, 0x2E	; 46
+ 646:	90 e2       	ldi	r25, 0x20	; 32
+ 648:	91 83       	std	Z+1, r25	; 0x01
+ 64a:	80 83       	st	Z, r24
+ 64c:	80 e2       	ldi	r24, 0x20	; 32
+ 64e:	90 e0       	ldi	r25, 0x00	; 0
+ 650:	93 83       	std	Z+3, r25	; 0x03
+ 652:	82 83       	std	Z+2, r24	; 0x02
+		strncat ( TempDateString, & DS3231DataString [ 2 ] [ 0 ], 2 );
+ 654:	42 e0       	ldi	r20, 0x02	; 2
+ 656:	50 e0       	ldi	r21, 0x00	; 0
+ 658:	be 01       	movw	r22, r28
+ 65a:	67 5e       	subi	r22, 0xE7	; 231
+ 65c:	7f 4f       	sbci	r23, 0xFF	; 255
+ 65e:	c8 01       	movw	r24, r16
+ 660:	0e 94 92 03 	call	0x724	; 0x724 <strncat>
+		strncat ( TempDateString, ":", 1 );
+ 664:	f8 01       	movw	r30, r16
+ 666:	01 90       	ld	r0, Z+
+ 668:	00 20       	and	r0, r0
+ 66a:	e9 f7       	brne	.-6      	; 0x666 <main+0x20c>
+ 66c:	31 97       	sbiw	r30, 0x01	; 1
+ 66e:	0f 2e       	mov	r0, r31
+ 670:	fa e3       	ldi	r31, 0x3A	; 58
+ 672:	ef 2e       	mov	r14, r31
+ 674:	f1 2c       	mov	r15, r1
+ 676:	f0 2d       	mov	r31, r0
+ 678:	f1 82       	std	Z+1, r15	; 0x01
+ 67a:	e0 82       	st	Z, r14
+		strncat ( TempDateString, & DS3231DataString [ 1 ] [ 0 ], 2 );
+ 67c:	42 e0       	ldi	r20, 0x02	; 2
+ 67e:	50 e0       	ldi	r21, 0x00	; 0
+ 680:	be 01       	movw	r22, r28
+ 682:	69 5e       	subi	r22, 0xE9	; 233
+ 684:	7f 4f       	sbci	r23, 0xFF	; 255
+ 686:	c8 01       	movw	r24, r16
+ 688:	0e 94 92 03 	call	0x724	; 0x724 <strncat>
+		strncat ( TempDateString, ":", 1 );
+ 68c:	f8 01       	movw	r30, r16
+ 68e:	01 90       	ld	r0, Z+
+ 690:	00 20       	and	r0, r0
+ 692:	e9 f7       	brne	.-6      	; 0x68e <main+0x234>
+ 694:	31 97       	sbiw	r30, 0x01	; 1
+ 696:	f1 82       	std	Z+1, r15	; 0x01
+ 698:	e0 82       	st	Z, r14
+		strncat ( TempDateString, & DS3231DataString [ 0 ] [ 0 ], 2 );
+ 69a:	42 e0       	ldi	r20, 0x02	; 2
+ 69c:	50 e0       	ldi	r21, 0x00	; 0
+ 69e:	be 01       	movw	r22, r28
+ 6a0:	6b 5e       	subi	r22, 0xEB	; 235
+ 6a2:	7f 4f       	sbci	r23, 0xFF	; 255
+ 6a4:	c8 01       	movw	r24, r16
+ 6a6:	0e 94 92 03 	call	0x724	; 0x724 <strncat>
+		strncat ( TempDateString, ".", 1 );
+ 6aa:	f8 01       	movw	r30, r16
+ 6ac:	01 90       	ld	r0, Z+
+ 6ae:	00 20       	and	r0, r0
+ 6b0:	e9 f7       	brne	.-6      	; 0x6ac <main+0x252>
+ 6b2:	31 97       	sbiw	r30, 0x01	; 1
+ 6b4:	8e e2       	ldi	r24, 0x2E	; 46
+ 6b6:	90 e0       	ldi	r25, 0x00	; 0
+ 6b8:	91 83       	std	Z+1, r25	; 0x01
+ 6ba:	80 83       	st	Z, r24
+		
+		unsigned char * dateString = reinterpret_cast < unsigned char * > ( TempDateString );
+		
+		receiveBluetooth ();	
+ 6bc:	0e 94 f5 00 	call	0x1ea	; 0x1ea <_Z16receiveBluetoothv>
+				
+		if ( ( PINC & 0x02 ) || bluetooth ) // If the hygrometer's output is high or if we send an "On", set the water pump.
+ 6c0:	31 99       	sbic	0x06, 1	; 6
+ 6c2:	03 c0       	rjmp	.+6      	; 0x6ca <main+0x270>
+ 6c4:	80 91 9b 01 	lds	r24, 0x019B	; 0x80019b <bluetooth>
+ 6c8:	01 c0       	rjmp	.+2      	; 0x6cc <main+0x272>
+ 6ca:	81 e0       	ldi	r24, 0x01	; 1
+ 6cc:	81 11       	cpse	r24, r1
+		{
+			setWaterPump ();
+ 6ce:	0e 94 33 01 	call	0x266	; 0x266 <_Z12setWaterPumpv>
+		}
+		updateLamp ( DS3231Data [ 2 ] );
+ 6d2:	8d a1       	ldd	r24, Y+37	; 0x25
+ 6d4:	0e 94 45 01 	call	0x28a	; 0x28a <_Z10updateLamph>
+		sendBluetoothData ( humString, tempString, dateString );
+ 6d8:	ae 01       	movw	r20, r28
+ 6da:	46 5d       	subi	r20, 0xD6	; 214
+ 6dc:	5f 4f       	sbci	r21, 0xFF	; 255
+ 6de:	be 01       	movw	r22, r28
+ 6e0:	64 5a       	subi	r22, 0xA4	; 164
+ 6e2:	7f 4f       	sbci	r23, 0xFF	; 255
+ 6e4:	ce 01       	movw	r24, r28
+ 6e6:	80 58       	subi	r24, 0x80	; 128
+ 6e8:	9f 4f       	sbci	r25, 0xFF	; 255
+ 6ea:	0e 94 04 01 	call	0x208	; 0x208 <_Z17sendBluetoothDataPhS_S_>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 6ee:	9f ef       	ldi	r25, 0xFF	; 255
+ 6f0:	2b e7       	ldi	r18, 0x7B	; 123
+ 6f2:	32 e9       	ldi	r19, 0x92	; 146
+ 6f4:	91 50       	subi	r25, 0x01	; 1
+ 6f6:	20 40       	sbci	r18, 0x00	; 0
+ 6f8:	30 40       	sbci	r19, 0x00	; 0
+ 6fa:	e1 f7       	brne	.-8      	; 0x6f4 <main+0x29a>
+ 6fc:	00 c0       	rjmp	.+0      	; 0x6fe <main+0x2a4>
+ 6fe:	00 00       	nop
+{
+	setup ();
+	char DHT11DataString [ 4 ] [ 5 ];
+	char DS3231DataString [ 7 ] [ 2 ];                                    // The data is as follows: second, minute, hour, dayOfWeek, dayOfMonth, month and year.
+	uint8_t DS3231Data [ 7 ];             
+	while ( true )
+ 700:	b9 ce       	rjmp	.-654    	; 0x474 <main+0x1a>
+
+00000702 <__tablejump2__>:
+ 702:	ee 0f       	add	r30, r30
+ 704:	ff 1f       	adc	r31, r31
+ 706:	05 90       	lpm	r0, Z+
+ 708:	f4 91       	lpm	r31, Z
+ 70a:	e0 2d       	mov	r30, r0
+ 70c:	09 94       	ijmp
+
+0000070e <strcat>:
+ 70e:	fb 01       	movw	r30, r22
+ 710:	dc 01       	movw	r26, r24
+ 712:	0d 90       	ld	r0, X+
+ 714:	00 20       	and	r0, r0
+ 716:	e9 f7       	brne	.-6      	; 0x712 <strcat+0x4>
+ 718:	11 97       	sbiw	r26, 0x01	; 1
+ 71a:	01 90       	ld	r0, Z+
+ 71c:	0d 92       	st	X+, r0
+ 71e:	00 20       	and	r0, r0
+ 720:	e1 f7       	brne	.-8      	; 0x71a <strcat+0xc>
+ 722:	08 95       	ret
+
+00000724 <strncat>:
+ 724:	fb 01       	movw	r30, r22
+ 726:	dc 01       	movw	r26, r24
+ 728:	0d 90       	ld	r0, X+
+ 72a:	00 20       	and	r0, r0
+ 72c:	e9 f7       	brne	.-6      	; 0x728 <strncat+0x4>
+ 72e:	11 97       	sbiw	r26, 0x01	; 1
+ 730:	41 50       	subi	r20, 0x01	; 1
+ 732:	50 40       	sbci	r21, 0x00	; 0
+ 734:	28 f0       	brcs	.+10     	; 0x740 <strncat+0x1c>
+ 736:	01 90       	ld	r0, Z+
+ 738:	00 20       	and	r0, r0
+ 73a:	0d 92       	st	X+, r0
+ 73c:	c9 f7       	brne	.-14     	; 0x730 <strncat+0xc>
+ 73e:	08 95       	ret
+ 740:	1c 92       	st	X, r1
+ 742:	08 95       	ret
+
+00000744 <__itoa_ncheck>:
+ 744:	bb 27       	eor	r27, r27
+ 746:	4a 30       	cpi	r20, 0x0A	; 10
+ 748:	31 f4       	brne	.+12     	; 0x756 <__itoa_ncheck+0x12>
+ 74a:	99 23       	and	r25, r25
+ 74c:	22 f4       	brpl	.+8      	; 0x756 <__itoa_ncheck+0x12>
+ 74e:	bd e2       	ldi	r27, 0x2D	; 45
+ 750:	90 95       	com	r25
+ 752:	81 95       	neg	r24
+ 754:	9f 4f       	sbci	r25, 0xFF	; 255
+ 756:	0c 94 ae 03 	jmp	0x75c	; 0x75c <__utoa_common>
+
+0000075a <__utoa_ncheck>:
+ 75a:	bb 27       	eor	r27, r27
+
+0000075c <__utoa_common>:
+ 75c:	fb 01       	movw	r30, r22
+ 75e:	55 27       	eor	r21, r21
+ 760:	aa 27       	eor	r26, r26
+ 762:	88 0f       	add	r24, r24
+ 764:	99 1f       	adc	r25, r25
+ 766:	aa 1f       	adc	r26, r26
+ 768:	a4 17       	cp	r26, r20
+ 76a:	10 f0       	brcs	.+4      	; 0x770 <__utoa_common+0x14>
+ 76c:	a4 1b       	sub	r26, r20
+ 76e:	83 95       	inc	r24
+ 770:	50 51       	subi	r21, 0x10	; 16
+ 772:	b9 f7       	brne	.-18     	; 0x762 <__utoa_common+0x6>
+ 774:	a0 5d       	subi	r26, 0xD0	; 208
+ 776:	aa 33       	cpi	r26, 0x3A	; 58
+ 778:	08 f0       	brcs	.+2      	; 0x77c <__utoa_common+0x20>
+ 77a:	a9 5d       	subi	r26, 0xD9	; 217
+ 77c:	a1 93       	st	Z+, r26
+ 77e:	00 97       	sbiw	r24, 0x00	; 0
+ 780:	79 f7       	brne	.-34     	; 0x760 <__utoa_common+0x4>
+ 782:	b1 11       	cpse	r27, r1
+ 784:	b1 93       	st	Z+, r27
+ 786:	11 92       	st	Z+, r1
+ 788:	cb 01       	movw	r24, r22
+ 78a:	0c 94 c7 03 	jmp	0x78e	; 0x78e <strrev>
+
+0000078e <strrev>:
+ 78e:	dc 01       	movw	r26, r24
+ 790:	fc 01       	movw	r30, r24
+ 792:	67 2f       	mov	r22, r23
+ 794:	71 91       	ld	r23, Z+
+ 796:	77 23       	and	r23, r23
+ 798:	e1 f7       	brne	.-8      	; 0x792 <strrev+0x4>
+ 79a:	32 97       	sbiw	r30, 0x02	; 2
+ 79c:	04 c0       	rjmp	.+8      	; 0x7a6 <strrev+0x18>
+ 79e:	7c 91       	ld	r23, X
+ 7a0:	6d 93       	st	X+, r22
+ 7a2:	70 83       	st	Z, r23
+ 7a4:	62 91       	ld	r22, -Z
+ 7a6:	ae 17       	cp	r26, r30
+ 7a8:	bf 07       	cpc	r27, r31
+ 7aa:	c8 f3       	brcs	.-14     	; 0x79e <strrev+0x10>
+ 7ac:	08 95       	ret
+
+000007ae <_exit>:
+ 7ae:	f8 94       	cli
+
+000007b0 <__stop_program>:
+ 7b0:	ff cf       	rjmp	.-2      	; 0x7b0 <__stop_program>
