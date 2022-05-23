@@ -17,7 +17,7 @@ unsigned char offStatus [] = "off.\n";
 unsigned char startMsg [] = "\n\nBluetooth hygrometer control. Send 'y' to turn on the water pump.\n";
 unsigned char tempMsg [] = "The temperature is: ";
 unsigned char dotMsg [] = ".";
-unsigned char degMsg [] = "°C.\n";
+unsigned char degMsg [] = "Â°C.\n";
 unsigned char statusPump [] = "The water pump is ";
 unsigned char statusLamp [] = "The UV lamp is ";
 
@@ -127,7 +127,7 @@ void setWaterPump ()
 
 void updateLamp ( uint8_t hour )
 {
-	if ( ( hour >= 18 ) && hour < 8 )
+	if ( ( hour >= 18 ) || hour < 8 )
 	{
 		PORTB &= ~ ( 1 << PORTB1 );    // Set PB1 low, i.e. set the lamp.
 	}
